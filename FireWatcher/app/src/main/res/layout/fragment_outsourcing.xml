@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background">
+
+    <ImageView
+        android:id="@+id/big_tree"
+        android:layout_width="260dp"
+        android:layout_height="234dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/big_tree_before"/>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_below="@id/big_tree"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/choose_image_background">
+
+        <LinearLayout
+            android:id="@+id/outsourcing_panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:gravity="center_horizontal"
+            android:padding="5dp">
+            
+            <ImageView
+                android:id="@+id/outsourcing_image"
+                android:layout_width="150dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center_vertical"/>
+
+            <RadioGroup
+                android:layout_width="120dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/forest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Forest"
+                    android:textSize="11sp"/>
+
+                <RadioButton
+                    android:id="@+id/residentail_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Residential area"
+                    android:textSize="11sp"/>
+
+                <RadioButton
+                    android:id="@+id/urban_fires"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Urban fires"
+                    android:textSize="11sp"/>
+
+                <RadioButton
+                    android:id="@+id/wild_fires"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="wild fires"
+                    android:textSize="11sp"/>
+
+                <RadioButton
+                    android:id="@+id/others"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Others"
+                    android:textSize="11sp"/>
+
+                <RadioButton
+                    android:id="@+id/fire_extinguisher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fire extinguisher"
+                    android:textSize="11sp"/>
+
+                <RadioButton
+                    android:id="@+id/hydrant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hydrant"
+                    android:textSize="11sp"/>
+
+                <RadioButton
+                    android:id="@+id/narrow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Narrow fire escape"
+                    android:textSize="9sp"/>
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/no_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:text="No images now"
+            android:visibility="invisible"/>
+        
+    </RelativeLayout>
+
+    
+
+</RelativeLayout>

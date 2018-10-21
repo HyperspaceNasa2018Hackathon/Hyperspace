@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Hyperspace</string>
+    <string name="real_time_fire_watch">Real time fire watch</string>
+    <string name="fire_in_history">Fire in history</string>
+    <string name="report_fire">Report fire</string>
+    <string name="about">About</string>
+    <string name="title_activity_fire_watcher">Hyperspace</string>
+    <string name="account_name">Finn Mertens</string>
+    <string name="fire_monitor_tab">Fire Monitor</string>
+    <string name="fire_report_tab">Fire Report</string>
+    <string name="fire_history_tab">Fire History</string>
+    <string name="fire_head_tab">On Fire!!</string>
+</resources>

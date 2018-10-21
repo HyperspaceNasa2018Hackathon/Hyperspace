@@ -1,0 +1,100 @@
+﻿---
+version: 1
+disable_existing_loggers: False
+formatters:
+    default_format:
+        format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    inf_format:
+        format: "%(asctime)s - %(levelname)s - %(message)s"
+    error_format:
+        format: "%(asctime)s - %(name)s - %(levelname)s - %(filename)s[line:%(lineno)d] in %(funcName)s - %(message)s"
+
+filters:
+    fatal_filters:
+        name: fatal
+    error_filters:
+        name: error
+    warn_filters:
+        name: warn
+    info_filters:
+        name: info
+    debug_filters:
+        name: debug
+
+handlers:
+    console_handler:
+        class: logging.StreamHandler
+        level: DEBUG
+        formatter: default_format
+        stream: ext://sys.stdout
+
+    fatal_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: FATAL
+        formatter: error_format
+        filename: /home/shianglun/HyperspaceWebService/Log/error.log
+        filters: [fatal_filters]
+        maxBytes: 10485760 # 10MB
+        backupCount: 5
+        encoding: utf8
+        
+    error_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: ERROR
+        formatter: error_format
+        filename: /home/shianglun/HyperspaceWebService/Log/error.log
+        filters: [error_filters]
+        maxBytes: 10485760 # 10MB
+        backupCount: 5
+        encoding: utf8
+        
+    warn_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: WARN
+        formatter: inf_format
+        filename: /home/shianglun/HyperspaceWebService/Log/info.log
+        filters: [warn_filters]
+        maxBytes: 10485760 # 10MB
+        backupCount: 5
+        encoding: utf8
+        
+    info_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: INFO
+        formatter: inf_format
+        filename: /home/shianglun/HyperspaceWebService/Log/info.log
+        filters: [info_filters]
+        maxBytes: 10485760 # 10MB
+        backupCount: 5
+        encoding: utf8
+        
+    debug_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: DEBUG
+        formatter: inf_format
+        filename: /home/shianglun/HyperspaceWebService/Log/info.log
+        maxBytes: 10485760 # 10MB
+        filters: [debug_filters]
+        backupCount: 5
+        encoding: utf8
+
+loggers:
+    root:
+        handlers: [console_handler]
+        level: DEBUG
+    fatal:
+        handlers: [fatal_file_handler]
+        level: FATAL
+    error:
+        handlers: [error_file_handler]
+        level: ERROR
+    warn:
+        handlers: [warn_file_handler]
+        level: WARN
+    info:
+        handlers: [info_file_handler]
+        level: INFO
+    debug:
+        handlers: [debug_file_handler]
+        level: DEBUG
+...
